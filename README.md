@@ -67,40 +67,41 @@ class Controller{
     
 };
 
-void Controller::openCard(){
+void Controller::openCard(){//1.开卡
     
     
 }
-void Controller::increment(){
-    
-    
-}
-
-void Controller::viewInfo(){
+void Controller::increment(){//2.充值
     
     
 }
 
-void Controller::removeCard(){
+void Controller::viewInfo(){//3.浏览
     
     
 }
-void Controller::showCopy(){
+
+void Controller::removeCard(){//8.删除数据
     
+    
+}
+void Controller::showCopy(){//显示版权
+    system("cls");
     cout<<"\n\n\t ********************湖南交通工程学院学籍管理系统****************************"<<endl;
     cout<<"\n\n\t ******************** 版权归 ITingLight 所有  ****************************"<<endl;
     
 }
 
-bool Controller::login(){
+bool Controller::login(){//登录
         string account;
-         string mypwd;
+        string mypwd;
     char pwd[20];
     char ch;
     int index=0;
     
    
-        showCopy();
+        showCopy();//显示版权
+    
         cout<<" \n请输入您的账号：";
         cin>>account;
         
@@ -108,19 +109,28 @@ bool Controller::login(){
     while(ch =getch()!=13){
         
         if(ch==8){
-            if(index <= 0){
-                index =0;
-            }
+                    if(index <= 0){
+                        index =0;
+                    }
+                    else {
+                        cout<<"\b \b";
+                        index--;
+                    }
+        else{
+            pwd[index++]=ch;
+            cout<<"*";
+        }
         }
     }
+    pwd[index]='\0';
     
         cin>>mypwd;
         
     if(account == "itinglight" && mypwd == "mishuyi")
-        return false;
+        return true;
     else
         cout<<"你输入的账号或密码不对，请确认后重新输入。";
-        return true;
+        return false;
     
    }
 
@@ -128,7 +138,7 @@ void Controller::menu(){
     int choice=0;
     do{
         
-  
+        system("cls");
         showCopy();
         cout<<"\n\n\t********************主菜单********************";
         cout<<"\n\n\t********************1,开卡********************";
@@ -157,7 +167,7 @@ void Controller::menu(){
             case 6:;break;
             case 7:;break;
             case 8:removeCard();break;
-            case 9:;break;
+            case 9:isEnd=true;break;
             
     }
 }
@@ -167,12 +177,19 @@ int main() {
     
     Controller controller;//创建一个Controller的对象
    
-    while(controller.login());
+    if(controller.login()){
+        
+        do{
+            controller.menu();
+        }while(!isEnd);
+        
+    }
     controller.menu();
     
     
    
     return 0;
 }
+
 
 ````
