@@ -11,8 +11,11 @@
 //
 
 #include<iostream>
-//#include<conio.h>
+#include<conio.h>
 #include<string.h>
+#include<windows.h>
+#include<vector>
+
 
 using namespace std;
 
