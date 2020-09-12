@@ -109,9 +109,9 @@ public:
 
 };
 void Controller::showCopy() {//显示版权
-  
-    cout << "\n\n\t ********************湖南交通工程学院学籍管理系统****************************" << endl;
-    cout << "\n\n\t ******************** 版权归 ITingLight 所有  ****************************" << endl;
+   
+    cout << "\n\n\t ********************    食堂餐卡充值消费管理系统    ****************************" << endl;
+    cout << "\n\n\t ********************     版权归 ITingLight 所有     ****************************" << endl;
 
 }
 
@@ -167,9 +167,10 @@ vector<IDCard>cards;
 
 void Controller::openCard() {//1.开卡
 
+    system("cls");
     showCopy();//显示版权
 
-    cout << "\n\n\t\t***********************1.开卡************************";
+    cout << "\n\n\t\t***********************1.新增用户************************";
 
     string stuId, cardId, sname, pwd;
     double balance;
@@ -215,6 +216,7 @@ void Controller::increment() {//2.充值
 
 void Controller::viewInfo() {//4.浏览
 
+    system("cls");
     //显示版权
     showCopy();
     cout << "\n\n\t\t***********************4.浏览************************";
@@ -248,6 +250,7 @@ void Controller::menu() { //菜单
     int choice = 0;
     do {
       
+        system("cls");
         showCopy();
         cout << "\n\n\t********************   主菜单   ********************";
         cout << "\n\n\t******************** 1,新增用户 ********************";

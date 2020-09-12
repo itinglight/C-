@@ -3,6 +3,16 @@
 
 大一下学期期末考核设计
 
+## 登录界面
+
+![](.\img\登录界面.png)
+
+## 主界面界面![](\img\主界面界面.png)
+
+## 添加用户界面
+
+##### ![](C:\Users\iting\Desktop\Cpp-sophomore\img\添加界面5.png)
+
 ````c++
 //
 //  main.cpp
